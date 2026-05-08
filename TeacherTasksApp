@@ -1,0 +1,77 @@
+class PersonTeacher {
+    String firstName;
+    String lastName;
+    int age;
+
+    String getName() {
+        return firstName + " " + lastName;
+    }
+}
+
+class CollegeStudent extends PersonTeacher {
+    String major;
+}
+
+class Teacher extends PersonTeacher {
+    String subject;
+
+    void teachClass() {
+        System.out.println(firstName + " is teaching " + subject + ".");
+    }
+}
+
+public class TeacherTasksApp {
+
+    public static void main(String[] args) {
+
+        Teacher t = new Teacher();
+        t.firstName = "Desiree";
+        t.lastName = "Smith";
+        t.age = 43;
+        t.subject = "English";
+
+        CollegeStudent s = new CollegeStudent();
+        s.firstName = "Jim";
+        s.lastName = "Miles";
+        s.age = 23;
+        s.major = "Computer Science";
+
+        PersonTeacher p1 = new PersonTeacher();
+        p1.firstName = "Kyle";
+        p1.lastName = "Ortman";
+        p1.age = 33;
+
+        PersonTeacher p2 = new PersonTeacher();
+        p2.firstName = "Kevin";
+        p2.lastName = "Durant";
+        p2.age = 31;
+
+        System.out.println("Person 1: " +
+                t.getName() +
+                ", age " + t.age +
+                ", teacher");
+
+        System.out.println();
+
+        System.out.println("Person 2: " +
+                s.getName() +
+                ", age " + s.age +
+                ", student");
+
+        System.out.println();
+
+        System.out.println("Person 3: " +
+                p1.getName() +
+                ", age " + p1.age);
+
+        System.out.println();
+
+        System.out.println("Person 4: " +
+                p2.getName() +
+                ", age " + p2.age);
+
+        System.out.println();
+
+        t.teachClass();
+    }
+}
